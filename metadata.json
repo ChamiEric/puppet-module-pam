@@ -1,5 +1,5 @@
 {
-  "name": "puppet-module-pam",
+  "name": "erobhal-pam",
   "version": "2.22.0",
   "author": "erobhal",
   "summary": "Manage PAM",
