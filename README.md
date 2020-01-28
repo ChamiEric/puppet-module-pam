@@ -2,7 +2,7 @@
 
 
 [![Build Status](
-https://api.travis-ci.org/ghoneycutt/puppet-module-pam.png?branch=master)](https://travis-ci.org/ghoneycutt/puppet-module-pam)
+https://api.travis-ci.org/erobhal/puppet-module-pam.png?branch=master)](https://travis-ci.org/erobhal/puppet-module-pam)
 
 This module manages PAM including accesslogin and limits.conf with functionality to create limits fragments for use in other modules.
 
