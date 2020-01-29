@@ -365,9 +365,9 @@ class pam (
             ]
 
             $default_pam_password_password_lines = [
-              'password        requisite       pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type=',
               'password        sufficient      pam_vas3.so',
               'password        requisite       pam_vas3.so echo_return',
+              'password        requisite       pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type=',
               'password        sufficient      pam_unix.so md5 shadow nullok try_first_pass use_authtok',
               'password        required        pam_deny.so',
             ]
