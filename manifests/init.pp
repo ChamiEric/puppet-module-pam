@@ -112,7 +112,7 @@ class pam (
               'session     optional      pam_keyinit.so revoke',
               'session     required      pam_limits.so',
               'session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid',
-              'session     required      pam_vas3.so show_lockout_msg',
+              'session     required      pam_vas3.so show_lockout_msg do_access_check',
               'session     requisite     pam_vas3.so echo_return',
               'session     required      pam_unix.so',
             ]
@@ -213,7 +213,7 @@ class pam (
               'session     optional      pam_keyinit.so revoke',
               'session     required      pam_limits.so',
               'session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid',
-              'session     required      pam_vas3.so show_lockout_msg',
+              'session     required      pam_vas3.so show_lockout_msg do_access_check',
               'session     requisite     pam_vas3.so echo_return',
               'session     required      pam_unix.so',
             ]
@@ -238,7 +238,7 @@ class pam (
               'session optional        pam_keyinit.so revoke',
               'session required        pam_limits.so',
               'session [success=1 default=ignore]      pam_succeed_if.so service in crond quiet use_uid',
-              'session required        pam_vas3.so create_homedir',
+              'session required        pam_vas3.so create_homedir do_access_check',
               'session requisite       pam_vas3.so echo_return',
               'session required        pam_unix.so',
             ]
@@ -351,7 +351,7 @@ class pam (
               'session     required      pam_limits.so',
               '-session    optional      pam_systemd.so',
               'session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid',
-              'session     required      pam_vas3.so show_lockout_msg',
+              'session     required      pam_vas3.so show_lockout_msg do_access_check',
               'session     requisite     pam_vas3.so echo_return',
               'session     required      pam_unix.so',
             ]
@@ -377,7 +377,7 @@ class pam (
               'session required        pam_limits.so',
               '-session        optional        pam_systemd.so',
               'session [success=1 default=ignore]      pam_succeed_if.so service in crond quiet use_uid',
-              'session required        pam_vas3.so create_homedir',
+              'session required        pam_vas3.so create_homedir do_access_check',
               'session requisite       pam_vas3.so echo_return',
               'session required        pam_unix.so',
             ]
@@ -499,7 +499,7 @@ class pam (
 
             $default_pam_session_lines = [
               'session  required   pam_limits.so',
-              'session  required   pam_vas3.so',
+              'session  required   pam_vas3.so do_access_check',
               'session  requisite  pam_vas3.so echo_return',
               'session  required   pam_unix2.so',
             ]
@@ -554,7 +554,7 @@ class pam (
 
             $default_pam_session_lines = [
               'session  required   pam_limits.so',
-              'session  required   pam_vas3.so create_homedir',
+              'session  required   pam_vas3.so create_homedir do_access_check',
               'session  requisite  pam_vas3.so echo_return',
               'session  required   pam_unix2.so',
               'session  optional   pam_umask.so',
@@ -608,7 +608,7 @@ class pam (
 
             $default_pam_session_lines = [
               'session  required   pam_limits.so',
-              'session  required   pam_vas3.so create_homedir',
+              'session  required   pam_vas3.so create_homedir do_access_check',
               'session  requisite  pam_vas3.so echo_return',
               'session  required   pam_unix2.so',
               'session  optional   pam_umask.so',
@@ -717,7 +717,7 @@ class pam (
                   'session requisite pam_deny.so',
                   'session required  pam_permit.so',
                   'session optional  pam_umask.so',
-                  'session required  pam_vas3.so create_homedir',
+                  'session required  pam_vas3.so create_homedir do_access_check',
                   'session requisite pam_vas3.so echo_return',
                   'session required  pam_unix.so',
                 ]
@@ -784,7 +784,7 @@ class pam (
                   'session requisite pam_deny.so',
                   'session required  pam_permit.so',
                   'session optional  pam_umask.so',
-                  'session required  pam_vas3.so create_homedir',
+                  'session required  pam_vas3.so create_homedir do_access_check',
                   'session requisite pam_vas3.so echo_return',
                   'session required  pam_unix.so',
                 ]
@@ -975,7 +975,7 @@ class pam (
             ]
 
             $default_pam_session_lines  = [
-              'other   session  required        pam_vas3.so create_homedir',
+              'other   session  required        pam_vas3.so create_homedir do_access_check',
               'other   session  requisite       pam_vas3.so echo_return',
               'other   session  required        pam_unix_session.so.1',
             ]

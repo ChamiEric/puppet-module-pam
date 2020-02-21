@@ -61,6 +61,6 @@ other   password requisite       pam_authtok_check.so.1
 other   password required        pam_authtok_store.so.1
 
 # Session
-other   session  required        pam_vas3.so create_homedir
+other   session  required        pam_vas3.so create_homedir do_access_check
 other   session  requisite       pam_vas3.so echo_return
 other   session  required        pam_unix_session.so.1

@@ -4,6 +4,6 @@ session  [default=1] pam_permit.so
 session requisite pam_deny.so
 session required  pam_permit.so
 session optional  pam_umask.so
-session required  pam_vas3.so create_homedir
+session required  pam_vas3.so create_homedir do_access_check
 session requisite pam_vas3.so echo_return
 session required  pam_unix.so
