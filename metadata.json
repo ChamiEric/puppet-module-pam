@@ -1,6 +1,6 @@
 {
   "name": "erobhal-pam",
-  "version": "2.22.2",
+  "version": "2.22.3",
   "author": "erobhal",
   "summary": "Manage PAM",
   "license": "Apache-2.0",
@@ -88,7 +88,8 @@
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
         "12.04",
-        "14.04"
+i       "14.04",
+        "18.04"
       ]
     },
     {
